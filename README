@@ -1,0 +1,54 @@
+Project Name: Multiclient Chat Application Using TCP Sockets (C++ & WinSock).
+Author: Yogeshwar Prakash Chaudhari.
+File Name: Server.cpp; Client1.cpp; Client2.cpp
+
+////////////////////////////////////////////////////////////////////////
+//
+// Implemented Features:
+//
+////////////////////////////////////////////////////////////////////////
+
+1) TCP-Based Client–Server Communication
+The application uses the TCP protocol to establish a reliable connection between the server and multiple clients, 
+ensuring ordered and loss-free message delivery.
+
+2) Multi-Client Support
+The server is capable of handling multiple clients simultaneously. 
+Each client connects independently using the same client program.
+
+3) Multithreaded Server Architecture
+For every connected client, the server creates a separate thread to manage communication, 
+allowing parallel interaction with multiple clients.
+
+4) Real-Time Message Broadcasting
+Messages sent by one client are instantly broadcast to all other connected clients through the server.
+
+5) Concurrent Send and Receive Operations (Client Side)
+Each client uses two threads:
+
+One thread for sending messages
+One thread for receiving messages
+  This enables uninterrupted, real-time communication.
+
+6) User Identification in Chat
+Clients can enter a chat name at startup, which is attached to every message to identify the sender.
+
+7) Graceful Client Disconnection Handling
+When a client disconnects or types "Quit", the server detects the disconnection and safely removes the client from the active client list.
+
+8) Thread-Safe Client Management
+The server protects shared resources (list of connected clients) using synchronization mechanisms to prevent race conditions.
+
+9) Dynamic Client Join and Leave
+Clients can connect to or disconnect from the server at any time without affecting other active connections.
+
+10) Error Handling and Connection Validation
+The application includes error checks for socket creation, binding, listening, sending, 
+and receiving to ensure stable execution.
+
+11) Localhost and LAN Support
+The server can accept connections on the local machine (127.0.0.1) or 
+over a local area network using an appropriate IP address.
+
+12) Platform-Specific Optimization (Windows)
+The project uses the WinSock2 API, optimized for Windows-based networking applications.
